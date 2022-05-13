@@ -1,3 +1,8 @@
+<?php
+if (!empty($_POST['btn_submit'])){
+    var_dump($_POST);
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
