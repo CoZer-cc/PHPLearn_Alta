@@ -13,11 +13,15 @@ try {
     $id = $_REQUEST['id'];
     $delete = $db->prepare('DELETE FROM user WHERE id=?');
     $delete->execute(array($id));
-    echo '削除しました';
+    if ($delete){
+        header('Location: ./admin.php');
+        exit;
+    }
+    $db = null;
+    $delete = null;
 } catch(PDOException $e) {
     echo '接続エラー:' . $e->getMessage();
 }
 ?>
-<a href="admin.php">一言掲示板・一覧画面_admin_page</a>
 </body>
 </html>

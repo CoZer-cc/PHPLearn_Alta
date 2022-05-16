@@ -7,7 +7,7 @@ require_once "db.php";
     // sql文をデーターベースからuserテーブルの中身を全部取得する
     $sql = $db->query("SELECT * FROM user ORDER BY create_time DESC");
     
-    include './temp/test.php';
+    include './temp/mainpage.php';
     exit();
   } catch (PDOException $e) {
     echo '接続失敗';
